@@ -37,18 +37,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Channel Layer
-CHANNER_LAYERS = {
-    'default': {
-        'BACKEND': 'asgi_redis.RedisChannelLayer',
-        'CONFIG': {
-            'hosts': [
-                os.environ.get('REDIS_URL', 'redis://localhost:6379')
-            ],
-        },
-        'ROUTING': 'chat.routing.channel_routing',
-    }
-}
+# # Channel Layer
+# CHANNER_LAYERS = {
+#     'default': {
+#         'BACKEND': 'asgi_redis.RedisChannelLayer',
+#         'CONFIG': {
+#             'hosts': [
+#                 os.environ.get('REDIS_URL', 'redis://localhost:6379')
+#             ],
+#         },
+#         'ROUTING': 'chat.routing.channel_routing',
+#     }
+# }
 
 # Application definition
 
@@ -62,7 +62,7 @@ INSTALLED_APPS = [
 
     'django_extensions',
 
-    'channels',
+    # 'channels',
     'chat',
 ]
 
