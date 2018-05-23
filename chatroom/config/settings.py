@@ -51,6 +51,7 @@ ALLOWED_HOSTS = []
 # }
 
 # Application definition
+ASGI_APPLICATION = 'config.routing.application'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,7 +63,7 @@ INSTALLED_APPS = [
 
     'django_extensions',
 
-    # 'channels',
+    'channels',
     'chat',
 ]
 
