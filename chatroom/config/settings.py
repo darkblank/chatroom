@@ -35,7 +35,13 @@ SECRET_KEY = '1ez5lq4a2io(z1n+srkw93a_qf@0lu(j#(-u!h)pz^-44ed2=m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '[::1]',
+    '.ap-northeast-2.compute.amazonaws.com',
+    '13.125.42.160',
+]
 
 # Channels
 ASGI_APPLICATION = 'config.routing.application'
