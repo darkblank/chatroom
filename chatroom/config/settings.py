@@ -34,6 +34,7 @@ SECRET_KEY = '1ez5lq4a2io(z1n+srkw93a_qf@0lu(j#(-u!h)pz^-44ed2=m'
 
 # Auth
 AUTH_USER_MODEL = 'member.User'
+LOGIN_URL = 'member:log_in'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

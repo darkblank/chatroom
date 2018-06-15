@@ -36,6 +36,7 @@ def log_in(request):
     return render(request, 'member/login.html', context)
 
 
+@login_required
 def log_out(request):
     logout(request)
     return redirect('chat:index')
