@@ -1,4 +1,4 @@
-from django.contrib.auth import login as django_login
+from django.contrib.auth import login as django_login, logout
 from django.shortcuts import render, redirect
 
 from member.forms import UserSignUpForm
@@ -17,3 +17,8 @@ def signup(request):
         'user_form': user_form
     }
     return render(request, 'member/signup.html', context)
+
+
+def log_out(request):
+    logout(request)
+    return redirect('chat:index')
