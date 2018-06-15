@@ -6,9 +6,7 @@ from django.utils import timezone
 class ChatRoom(models.Model):
     name = models.CharField(
         max_length=20,
-    )
-    label = models.SlugField(
-        unique=True,
+        unique=True
     )
 
 
