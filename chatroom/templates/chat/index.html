@@ -16,9 +16,19 @@
         }
     };
 
-    document.querySelector('#room-name-submit').onclick = function(e) {
-        var roomName = document.querySelector('#room-name-input').value;
-        window.location.pathname = '/chat/' + roomName + '/';
-    };
+    $('#room-name-submit').on('click', function() {
+        var roomName = $('#room-name-input').val();
+        $.ajax({
+            url: '/chat/',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                'roomname': roomName
+            },
+            success: function(res) {
+                window.location.pathname = '/chat/' + res['roomname'] + '/';
+            }
+        })
+    });
 </script>
 {% endblock %}
