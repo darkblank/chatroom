@@ -1,7 +1,8 @@
 from django.contrib.auth import login as django_login, logout
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-from member.forms import UserSignUpForm
+from member.forms import UserSignUpForm, LoginForm
 
 
 def signup(request):
@@ -17,6 +18,22 @@ def signup(request):
         'user_form': user_form
     }
     return render(request, 'member/signup.html', context)
+
+
+def log_in(request):
+    if request.method == 'POST':
+        login_form = LoginForm(request.POST)
+        if login_form.is_valid():
+            login_form.login(request)
+            return redirect('chat:index')
+        else:
+            return HttpResponse('Login credential invalid')
+    else:
+        login_form = LoginForm()
+    context = {
+        'login_form': login_form,
+    }
+    return render(request, 'member/login.html', context)
 
 
 def log_out(request):

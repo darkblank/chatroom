@@ -29,7 +29,7 @@
 					<div class="collapse navbar-collapse" id="top-nav">
 						<ul class="nav navbar-nav navbar-right">
 							{% if user.is_authenticated %}
-							<li><a href="{% url 'member:signup' %}">Logout</a></li>
+							<li><a href="{% url 'member:log_out' %}">Logout</a></li>
 							{% else %}
 							<li><a href="{% url 'member:log_in' %}">Login</a></li>
 							<li><a href="{% url 'member:signup' %}">Signup</a></li>
