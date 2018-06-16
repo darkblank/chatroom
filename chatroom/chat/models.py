@@ -19,4 +19,7 @@ class Message(models.Model):
         'member.User',
         on_delete=models.CASCADE,
     )
+    comment = models.TextField(
+        blank=True
+    )
     timestamp = models.DateTimeField(default=timezone.now)
