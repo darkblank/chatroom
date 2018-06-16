@@ -1,6 +1,8 @@
 ### Custom ###
 .idea/
 .config/
+.static_root/
+.media/
 ### Django ###
 *.log
 *.pot
