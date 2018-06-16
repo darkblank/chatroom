@@ -9,6 +9,9 @@ class ChatRoom(models.Model):
         unique=True
     )
 
+    def __str__(self):
+        return self.name
+
 
 class Message(models.Model):
     chatroom = models.ForeignKey(
@@ -23,3 +26,6 @@ class Message(models.Model):
         blank=True
     )
     timestamp = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f'{self.pk} - {self.comment}'
