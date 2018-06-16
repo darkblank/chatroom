@@ -28,6 +28,8 @@ def index(request):
 
 @login_required
 def room(request, room_name):
-    return render(request, 'chat/room.html', {
+    context = {
+        'user_pk': request.user.pk,
         'room_name_json': mark_safe(json.dumps(room_name))
-    })
+    }
+    return render(request, 'chat/room.html', context)
